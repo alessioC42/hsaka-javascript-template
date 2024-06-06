@@ -17,7 +17,7 @@ const ageInYears = Math.floor(
 console.log(`age: ${ageInYears}`)
 console.log(`quarter: Q${Math.floor(birthDate.getMonth() / 3) + 1}`)
 console.log(
-    `euElection && euFootballCup: ${(currentYear - 1960) % 4 && (currentYear - 1979) % 5}`,
+    `euElection && euFootballCup: ${(currentYear - 1960) % 4 === 0 && (currentYear - 1979) % 5 === 0}`,
 )
 console.log(
     `recieveGifts: ${(birthMonth === currentMonth && birthDay === currentDay) || (currentDay === 24 && currentMonth === 12)}`,

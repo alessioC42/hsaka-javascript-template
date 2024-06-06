@@ -5,12 +5,12 @@ export function getMagicNumber(startYear, age) {
 }
 
 function nextEuElectionAndEuFootballCup(currentYear) {
-    while (true) {
-        if ((currentYear - 1960) % 4 === 0 && (currentYear - 1979) % 5 === 0) {
-            return currentYear
-        }
+    if (currentYear < 1979)
+        throw Error("The year did not fulfil the criteria >=1979")
+    while ((currentYear - 1960) % 4 !== 0 || (currentYear - 1979) % 5 !== 0) {
         currentYear++
     }
+    return currentYear
 }
 
 function collatz(n, iterationsLeft = 2) {
